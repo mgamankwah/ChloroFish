@@ -24,8 +24,7 @@ This directory contains a number of csv folders which were used in the project. 
     - Identifies features that were highly correlated or largely missing.
     - Fills blank shrimp data with zeros (as per the Trawling Operations Manual).
     - Performs exploratory data analysis to identify predictive variables.
-
--src/visualizations/scatterplots
+- /src/visualizations/scatterplots
     - Generates scatterplots to understand the spatial and spatial-temporal structure of the shrimp dataset.
 
 ## Modeling
