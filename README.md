@@ -29,8 +29,8 @@ This directory contains a number of csv folders which were used in the project. 
 - /models/Model_comparison
     - Runs and evaluates a number of models for total shrimp biomass
         - Mean catch (baseline): MSE = 2.4884
-        - XGBoost: MSE of 1.6099.
-        - **Histogram Gradient Boosting:** MSE of 1.3901.
+        - XGBoost: MSE of 1.6099
+        - **Histogram Gradient Boosting:** MSE of 1.3901
         - LinearRegressor (with imputation): MSE = 2.1474
         - SVMRegressor (with imputation): MSE = 2.0916
         - KNeighborsRegressor (with imputation): MSE = 1.9059
@@ -42,15 +42,16 @@ This directory contains a number of csv folders which were used in the project. 
     - Performs Shapley analysis to interpret the predictions of the HGB model
 - /models/Neural_networks
     - Runs and evaluates two neural network models and a convolutional neural network for total shrimp biomass
-        - Three layers with two hidden layers (64 and 32 neurons with ReLU activation) and an output layer with a single neuron: MSE = 1.8331.
-        - Similar structure but using hyperbolic tangent as the activation function: MSE = 1.8194.
+        - Three layers with two hidden layers (64 and 32 neurons with ReLU activation) and an output layer with a single neuron: MSE = 1.8331
+        - Similar structure but using hyperbolic tangent as the activation function: MSE = 1.8194
 - /models/HistGradBoost_Shrimp
     - Experiments with different features for an HGB model
     - Uses HGB with a quantile loss function and a transformed target variable to obtain prediction intervals
+    - Trains the HGB model on the full training set and tests it on the test set to obtain the final mean squared error
 
 ## Conclusions
 
-The **HistGradientBoostingRegressor** consistently performed the best, achieving an MSE of 1.3901 without imputation. Attempts to fine-tune and rescale the model did not yield significant improvements.
+The **HistGradientBoostingRegressor** consistently performed the best, achieving an MSE of 1.3901 without imputation on the validation set. Attempts to fine-tune and rescale the model did not yield significant improvements. When we trained the model on the full training set and evaluated it on the testing set, this model obtain a MSE of 1.3514.
 
 During a demo presentation, prediction intervals were requested for shrimp catch. The target was transformed using `f(x) = log(1+x)` to smooth the data, and prediction intervals were generated using quantile loss. Although the 90% prediction interval only contained 81% of the data, the results were reasonably accurate.
 
