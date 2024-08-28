@@ -1,8 +1,5 @@
 # ChloroFish
-Erdos Deep Learning Bootcamp Team Project: Modeling predictive linkage between chlorophyll and fishery measures
-
-
-This project focuses on modeling catch data using environmental and chlorophyll measurements from the Southeast Area Monitoring and Assessment Program (SEAMAP). The data, preprocessing and models are organized in the `data`, `src` and `models` directories, respectively.
+This repository was created as part of the Erdos Institute Deep Learning Bootcamp Team Project and New Atlantis Labs Ocean Data Fellowship. The research question was to model the predictive linkage between chlorophyll and fishery measures. To address this question, we studied catch data and environmental/chlorophyll measurements from the Southeast Area Monitoring and Assessment Program (SEAMAP). The data, preprocessing and models are organized in the `data`, `src` and `models` directories, respectively.
 
 ## Key Data Source
 
