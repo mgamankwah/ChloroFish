@@ -53,7 +53,7 @@ This directory contains a number of csv folders which were used in the project. 
 
 The **HistGradientBoostingRegressor** consistently performed the best, achieving an MSE of 1.3901 without imputation on the validation set. Attempts to fine-tune and rescale the model did not yield significant improvements. When we trained the model on the full training set and evaluated it on the testing set, this model obtain a MSE of 1.3514.
 
-During a demo presentation, prediction intervals were requested for shrimp catch. The target was transformed using `f(x) = log(1+x)` to smooth the data, and prediction intervals were generated using quantile loss. Although the 90% prediction interval only contained 81% of the data, the results were reasonably accurate.
+During a demo presentation, prediction intervals were requested for shrimp catch. The target was transformed using `f(x) = log(1+x)` to smooth the data, and prediction intervals were generated using quantile loss. The results were reasonably accurate, but the prediction intervals were a bit narrow, with the 90% prediction interval containing 84% of the data.
 
 Shapley values were used to identify the most predictive features, revealing that location and time are key indicators, with environmental factors such as chlorophyll levels, temperature, and bottom oxygen also playing significant roles. High temperatures and low oxygen levels were found to be detrimental to shrimp populations.
 
