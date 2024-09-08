@@ -87,10 +87,10 @@ Shapley values were used to identify the most predictive features, revealing tha
     - Performed XGBoost tree pruning and network exploration to prevent overfitting
 
 
-<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Linear_predictions.png" width="512">
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Linear_predictions.png" width="256">
 
 
-<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/CNN_predictions.png" width="512">
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/CNN_predictions.png" width="256">
 
 
 ## Conclusions
@@ -100,8 +100,9 @@ The **CNN** was the best performing model by a small margin but overall all mode
 - Naive averaging of spatiotemporal quantities that may introduce error
 
 
-The complex nature of the Shannon entropy through time (but not through space) may be too abrupt to accurately capture for all models 
-<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Shannon_entropy_time_series.png" width="512">
+The complex nature of the Shannon entropy through time (but not through space) may be too abrupt to accurately capture for all models
+
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Shannon_entropy_time_series.png" width="780">
 
 Model improvements could be made in:
 - Using a graph network NN model for locality & adjacency
