@@ -66,6 +66,11 @@ Shapley values were used to identify the most predictive features, revealing tha
 
 # Biodiversity Population Modeling
 
+Typically, a more healthy ecosystem has a high variety of species and is “well-balanced” (i.e. no invasive species takes over the ecosystem). Therefore, another approach with the data was to model the species diversity by using species IDs (unique tag for each species) and their extrapolated counts during the survey expeditions. The main challenges with this approach are:
+- Creating a good metric, or metrics, for a diversity ecosystem
+- Gathering the data in such a way that preserves useful information
+
+
 ## Preprocessing
 
 - /src/data_preprocessing/BIO_DIV
