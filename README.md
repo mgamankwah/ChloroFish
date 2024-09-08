@@ -1,14 +1,17 @@
 # ChloroFish
 This repository was created as part of the Erdos Institute Deep Learning Bootcamp Team Project and New Atlantis Labs Ocean Data Fellowship. The research question was to model the predictive linkage between chlorophyll and fishery measures. To address this question, we studied catch data and environmental/chlorophyll measurements from the Southeast Area Monitoring and Assessment Program (SEAMAP). The data, preprocessing and models are organized in the `data`, `src` and `models` directories, respectively.
 
+## Repository Structure
+
+- **data/**: Contains dataframes stored as csvs.
+- **src/**: Contains data preprocessing scripts, visualizations, and exploratory data analysis.
+- **models/**: Includes various models tested in this project, along with their performance metrics.
+
 ## Key Data Source
 
 The **Southeast Area Monitoring and Assessment Program (SEAMAP)** is a cooperative program that collects, manages, and disseminates fishery-independent data from the southeastern United States. SEAMAP operates across three regions—Gulf, South Atlantic, and Caribbean—conducting surveys that provide critical data for fisheries management.
 
-## Data
-
-This directory contains a number of csv folders which were used in the project. Any dataframe created in this project is stored in this folder.
-
+# Shrimp Population Modeling
 
 ## Preprocessing
 
@@ -23,7 +26,8 @@ This directory contains a number of csv folders which were used in the project. 
     - Performs exploratory data analysis to identify predictive variables.
 - /src/visualizations/scatterplots
     - Generates scatterplots to understand the spatial and spatial-temporal structure of the shrimp dataset.
-
+- /src/data_preprocessing/BIO_DIV
+    - 
 ## Modeling
 
 - /models/Model_comparison
@@ -57,9 +61,49 @@ During a demo presentation, prediction intervals were requested for shrimp catch
 
 Shapley values were used to identify the most predictive features, revealing that location and time are key indicators, with environmental factors such as chlorophyll levels, temperature, and bottom oxygen also playing significant roles. High temperatures and low oxygen levels were found to be detrimental to shrimp populations.
 
-## Repository Structure
 
-- **data/**: Contains dataframes stored as csvs.
-- **src/**: Contains data preprocessing scripts, visualizations, and exploratory data analysis.
-- **models/**: Includes various models tested in this project, along with their performance metrics.
 
+
+# Biodiversity Population Modeling
+
+## Preprocessing
+
+- /src/data_preprocessing/BIO_DIV
+    - Filters out incorrect measurements (e.g., temperatures over 100°C).
+    - Groups entries by day to get unique species caught daily
+    - Calculates different species diversity health metrics
+
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/shannon_entropy.png" width="512">
+
+## Modeling
+
+- /models/BIODIV_models
+    - Runs and evaluates a number of models for predicting biodiversity marker of Shannon entropy (values range from 0 - 4)
+        - Linear model (with imputation): RMSE = 0.637
+        - XGBoost: RMSE = 0.515
+        - 2 layer Neural Network (with imputation): RMSE = 0.538
+        - **2 layer CNN (with imputation):** RMSE = 0.507
+        - MultiRegressor XGBoost: RMSE = 0.525
+    - Performed XGBoost tree pruning and network exploration to prevent overfitting
+
+
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Linear_predictions.png" width="512">
+
+
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/CNN_predictions.png" width="512">
+
+
+## Conclusions
+
+The **CNN** was the best performing model by a small margin but overall all models seem to have the same overall performance and hit the same RMSE barrier limited that couls be caused by:
+- Low amount of ~7000 data points
+- Naive averaging of spatiotemporal quantities that may introduce error
+
+
+The complex nature of the Shannon entropy through time (but not through space) may be too abrupt to accurately capture for all models 
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Shannon_entropy_time_series.png" width="512">
+
+Model improvements could be made in:
+- Using a graph network NN model for locality & adjacency
+- Augment certain data quantities with richer data (i.e. satellite surface temperature data)
+- Assess other metrics of species diversity that better capture ecosystem health
