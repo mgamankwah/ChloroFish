@@ -92,7 +92,7 @@ Typically, a more healthy ecosystem has a high variety of species and is “well
     - Performed XGBoost tree pruning and network exploration to prevent overfitting
 
 
-<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Linear_predictions.png" width="256"><img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/CNN_predictions.png" width="256">
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Linear_predictions.png" width="350"><img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/CNN_predictions.png" width="350">
 
 
 ## Conclusions
