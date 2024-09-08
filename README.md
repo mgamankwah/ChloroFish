@@ -87,10 +87,7 @@ Shapley values were used to identify the most predictive features, revealing tha
     - Performed XGBoost tree pruning and network exploration to prevent overfitting
 
 
-<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Linear_predictions.png" width="256">
-
-
-<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/CNN_predictions.png" width="256">
+<img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/Linear_predictions.png" width="256"><img src="https://github.com/mgamankwah/ChloroFish/blob/main/images/CNN_predictions.png" width="256">
 
 
 ## Conclusions
