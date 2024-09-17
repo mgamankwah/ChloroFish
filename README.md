@@ -59,7 +59,7 @@ The **HistGradientBoostingRegressor** consistently performed the best, achieving
 
 During a demo presentation, prediction intervals were requested for shrimp catch. The target was transformed using `f(x) = log(1+x)` to smooth the data, and prediction intervals were generated using quantile loss. The results were reasonably accurate, but the prediction intervals were a bit narrow, with the 90% prediction interval containing 84% of the data.
 
-Shapley values were used to identify the most predictive features, revealing that location and time are key indicators, with environmental factors such as chlorophyll levels, temperature, and bottom oxygen also playing significant roles. High temperatures and low oxygen levels were found to be detrimental to shrimp populations.
+Shapley values were used to identify the most predictive features, revealing that location and time are key indicators, with environmental factors such as chlorophyll levels, temperature, and bottom oxygen also playing significant roles. In particular, low oxygen levels were found to be detrimental to shrimp populations.
 
 
 
